@@ -1,0 +1,35 @@
+{
+    "pages": [
+        "pages/public/login",
+        "pages/public/register",
+        "pages/live/index",
+        "pages/live/detail",
+        "pages/personal/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTitleText": "购物直播",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#898989",
+        "selectedColor": "#ff6775",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "#f8f8f8",
+        "list": [
+            {
+                "pagePath": "pages/live/index",
+                "iconPath": "image/home-none.png",
+                "selectedIconPath": "image/home-curr.png",
+                "text": "直播"
+            },
+            {
+                "pagePath": "pages/personal/index",
+                "iconPath": "image/my-none.png",
+                "selectedIconPath": "image/my-curr.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

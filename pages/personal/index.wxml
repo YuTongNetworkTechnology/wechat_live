@@ -1,0 +1,4 @@
+<view class="myBox">
+    <image src='../../image/logo.png'></image>
+    <text>请自行开发</text>
+</view>

@@ -1,0 +1,406 @@
+page {
+    background: #fc8b96;
+}
+
+.container {
+    width: 100%;
+    height: 775rpx;
+    position: relative;
+}
+
+/*
+ * @auther 晓清
+ * 直播左侧列表
+ * 2018-05-27
+ * http://www.zjkytwl.com/
+ *
+*/
+
+.content-left {
+    width: 200rpx;
+    height: 775rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffb8bf;
+    overflow: hidden;
+}
+
+.left-carousel {
+    width: 180rpx;
+    height: 180rpx;
+    position: relative;
+    margin: 10rpx;
+}
+
+.left-carousel image {
+    width: 100%;
+    height: 180rpx;
+    display: block;
+}
+
+.left-carousel-title {
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    display: block;
+    padding: 0 0 0 16rpx;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 24rpx;
+}
+
+/*
+ * @auther 晓清
+ * 直播封面
+ * 2018-05-27
+ * http://www.zjkytwl.com/
+ *
+*/
+
+.content-right {
+    width: 550rpx;
+    height: 775rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.rightMainImg {
+    width: 550rpx;
+    height: 775rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.right-head {
+    width: 180rpx;
+    height: 60rpx;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 20rpx;
+    left: 25rpx;
+    border-radius: 90rpx;
+    padding: 5rpx 5rpx 5rpx 68rpx;
+}
+
+.right-head-avatar {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 100rpx;
+    position: absolute;
+    top: 6rpx;
+    left: 6rpx;
+}
+
+.right-head-name {
+    width: auto;
+    font-size: 20rpx;
+    color: #fff;
+    position: absolute;
+    top: 9rpx;
+    left: 68rpx;
+}
+
+.right-head-online {
+    font-size: 16rpx;
+    color: #fff;
+    position: absolute;
+    bottom: 7rpx;
+    left: 68rpx;
+    overflow: auto;
+    width: 100%;
+}
+
+.right-praise {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 100%;
+    position: absolute;
+    right: 28rpx;
+    bottom: 28rpx;
+    background: #f96a6f;
+}
+
+.right-praise cover-image{
+    width: 32rpx;
+    height: 34rpx;
+    display: block;
+    margin: 15rpx auto 0;
+}
+
+/*
+ * @auther 晓清
+ * 直播左侧列表详情
+ * 2018-05-27
+ * http://www.zjkytwl.com/
+ *
+*/
+
+.content-newRight {
+    width: 550rpx;
+    height: 775rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #fff;
+}
+
+.newRight-head {
+    width:100%;
+    height:196rpx;
+    padding:10rpx 65rpx 10rpx 226rpx;
+    border-bottom:2rpx solid #dcdddd;
+    position:relative;
+}
+
+.newRight-head .clothe {
+    width: 180rpx;
+    height: 180rpx;
+    position: absolute;
+    top: 27rpx;
+    left: 26rpx;
+}
+
+.newRight-head .close {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 27rpx;
+    left: 470rpx;
+}
+
+.newRight-head-name {
+    color: #000;
+    font-size: 24rpx;
+    margin: 45rpx 0 35rpx;
+    line-height: 35rpx;
+}
+
+.newRight-head-price {
+    color: #fd3e50;
+    font-size: 24rpx;
+    line-height: 35rpx;
+}
+
+.newRight-specs {
+    width: 100%;
+    height: auto;
+    border-bottom: 2rpx solid #dcdddd;
+    padding: 35rpx 65rpx 35px 35rpx;
+}
+
+.newRight-specs-title {
+    width: auto;
+    color: #595757;
+    font-size: 20rpx;
+    margin: 0 0 20rpx;
+}
+
+.newRight-specs-kind {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.newRight-specs-kind cover-view {
+    width: 185rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    float: left;
+    border: 2rpx solid #c9caca;
+    margin: 0 25rpx 20rpx 0;
+    font-size: 20rpx;
+}
+
+.newRight-num {
+    width: 220rpx;
+    height: 40rpx;
+    border: 2rpx solid #dcdddd;
+    position: relative;
+}
+
+.newRight-num-reduce {
+    width: 60rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    color: #595757;
+    font-size: 20rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.newRight-num-add {
+    width: 60rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    color: #ff0808;
+    font-size: 20rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.newRight-num-figure {
+    width: 100rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+    color: #595757;
+    font-size: 20rpx;
+    position: absolute;
+    top: 0;
+    right: 60rpx;
+    border-left: 2rpx solid #dcdddd;
+    border-right: 2rpx solid #dcdddd;
+}
+
+.newRight-btn {
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background: #fc5162;
+    color: #fff;
+    margin: 67rpx 0 0 35rpx;
+    font-size: 24rpx;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 13rpx solid transparent;
+    border-right: 20rpx solid white;
+    border-bottom: 13rpx solid transparent;
+    position: absolute;
+    right: -20rpx;
+    top: 45%;
+    z-index: 10;
+}
+
+.content-wrap {
+    width: 100%;
+    height: 26%;
+    position: absolute;
+    top: 870rpx;
+    left: 0;
+    padding: 20rpx 35rpx 0;
+}
+
+.content-wrap-dialogue {
+    width: 100%;
+    height: auto;
+    line-height: 40rpx;
+    margin: 10rpx 0;
+}
+
+.wrap-dialogue-name {
+    width: auto;
+    height: auto;
+    color: #ff0808;
+    font-size: 34rpx;
+}
+
+.wrap-dialogue-info {
+    width: auto;
+    height: auto;
+    color: #fff;
+    font-size: 34rpx;
+}
+
+.select {
+    border: 2rpx solid #fc8b96 !important;
+    color: #fc8b96;
+}
+
+.reduce-color {
+    color: #ff0808;
+}
+
+/*
+ * @auther 晓清
+ * 直播对话
+ * 2018-05-27
+ * http://www.zjkytwl.com/
+ *
+*/
+
+.content-btm {
+    width: 100%;
+    height: auto;
+    padding: 20rpx 35rpx;
+}
+
+.content-btm-intro {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 22rpx;
+    line-height: 40rpx;
+}
+
+.talkInputBox {
+    width: 100%;
+    height: 110rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #f84758;
+    padding: 20rpx 180rpx 20rpx 30rpx;
+    z-index: 10;
+}
+
+.talkInputBox input {
+    width: 100%;
+    height: 70rpx;
+    padding: 0 30rpx;
+    background: #ffced3;
+    border-radius: 10rpx;
+    font-size: 24rpx;
+    color: #f84758;
+}
+
+.talkInputBox button {
+    width: 125rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    background: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 20rpx;
+    right: 30rpx;
+    color: #f84758;
+    font-size: 24rpx;
+}
+
+.talkInputBox button::after {
+    border: 0;
+}
+
+.talkInputBox .color {
+    color: #f84758;
+    font-size: 24rpx;
+}
+.popup{
+    width: 85rpx;
+    height: 85rpx;
+    position: fixed;
+    bottom: 45rpx;
+    right: 40rpx;
+    z-index: 11;
+}
+.popup image{
+    width: 85rpx;
+    height: 85rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

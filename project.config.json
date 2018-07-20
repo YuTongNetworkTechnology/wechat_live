@@ -1,0 +1,52 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.0",
+	"appid": "wx493fd74573793f51",
+	"projectname": "%E7%9B%B4%E6%92%AD%E8%B4%AD%E7%89%A9",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "直播详情",
+					"pathName": "pages/live/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "直播详情",
+					"pathName": "pages/personal/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,21 @@
+view,scroll-view, text, label, textarea, input, button, canvas {
+      box-sizing: border-box;
+      color: #333;
+      font-size: 28rpx;
+}
+
+.clear {
+      width: 100%;
+      height: 0 !important;
+      clear: both;
+      line-height: 0;
+      overflow: hidden;
+}
+
+.show {
+      display: block;
+}
+
+.hide {
+      display: none;
+}

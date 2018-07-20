@@ -1,0 +1,62 @@
+<view class="container">
+    <scroll-view class='content-left' scroll-y="true">
+        <view class='left-carousel' data-index="{{idx}}" bindtap="bindDetail" wx:key wx:for="{{project}}" wx:for-item="item" wx:for-index="idx">
+            <image src='{{item.image}}'></image>
+            <text class='left-carousel-title'>{{item.name}}</text>
+            <text class="{{index == idx ? 'triangle':''}}" wx:if="{{!hidden}}"></text>
+        </view>
+    </scroll-view>
+    <view class='content-right'>
+        <live-player id="player" src='{{pull_url}}' mode="live" autoplay bindstatechange="statechange" binderror="error" class='rightMainImg' object-fit='fillCrop'/>
+        <cover-view class='right-head'>
+            <cover-image src='{{avatar}}' class='right-head-avatar'></cover-image>
+            <cover-view class='right-head-name'>{{roomAnthor}}</cover-view>
+            <cover-view class='right-head-online'>在线12700</cover-view>
+        </cover-view>
+        <cover-view class='right-praise'>
+            <cover-image src="../../image/praise.png"></cover-image>
+        </cover-view>
+    </view>
+    <cover-view class='content-newRight' wx:if="{{!hidden}}">
+        <cover-view class='newRight-head'>
+            <cover-image src='{{project[num].image}}' class='clothe'></cover-image>
+            <cover-view class='newRight-head-name'>{{project[num].name}}</cover-view>
+            <cover-view class='newRight-head-price'>¥{{project[num].spec[project[num].types].price}}</cover-view>
+            <cover-image src='../../image/close.png' class='close' bindtap='close'></cover-image>
+        </cover-view>
+        <cover-view class='newRight-specs'>
+            <cover-view class='newRight-specs-title'>规格</cover-view>
+            <cover-view class='newRight-specs-kind'>
+                <cover-view data-idx="{{index}}" wx:for="{{project[num].spec}}" wx:for-item="sp" bindtap='bindSelect' wx:for-index="index" class="{{project[num].types == index ? 'select' : ''}}">{{sp.name}}{{sp.type}}</cover-view>
+            </cover-view>
+            <cover-view class='newRight-specs-title'>数量</cover-view>
+            <cover-view class='newRight-num'>
+                <cover-view class="newRight-num-reduce {{project[num].num > 1 ?'reduce-color':''}}" bindtap='minusCount'>-</cover-view>
+                <cover-view class='newRight-num-figure'>{{project[num].num}}</cover-view>
+                <cover-view class='newRight-num-add' bindtap='addCount'>+</cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view class='newRight-btn' bindtap="submit">立即购买</cover-view>
+    </cover-view>
+</view>
+<view class='content-btm'>
+    <view class='content-btm-intro'>喜欢的亲关注主播点赞哦，加购我推荐的好货！本直播为绿色直播，禁止低俗、引诱、暴露、等一切违法内</view>
+    <scroll-view class='content-wrap' scroll-y="true" scroll-into-view="{{ toView }}">
+
+        <view class='content-wrap-main'>
+            <view class='content-wrap-dialogue' wx:for="{{ chatMsg }}" wx:key="" id="{{ item.mid }}">
+                <text class='wrap-dialogue-name'>{{item.Username}} </text>
+                <text class='wrap-dialogue-info'>{{item.Msg}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class='talkInputBox' wx:if="{{show==1}}">
+    <form>
+        <input type="text" placeholder='输入内容互动' placeholder-class="color" bindinput='inputMsg' focus='ture' bindblur='layer'></input>
+        <button bindtap="sendMessage" formType="reset">发送</button>
+    </form>
+</view>
+<view class='popup' bindtap='popup' wx:if="{{isLayer}}">
+    <image src="../../image/talk.png"></image>
+</view>

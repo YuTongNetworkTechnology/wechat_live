@@ -1,0 +1,34 @@
+<view class="nav">
+    <text class="{{kind == 1 ? 'curr' : ''}}" data-kind="1" bindtap='bindChange'>热门</text>
+    <text class="{{kind == 2 ? 'curr' : ''}}" data-kind="2" bindtap='bindChange'>美妆</text>
+    <text class="{{kind == 3 ? 'curr' : ''}}" data-kind="3" bindtap='bindChange'>穿搭</text>
+    <text class="{{kind == 4 ? 'curr' : ''}}" data-kind="4" bindtap='bindChange'>关注</text>
+</view>
+<view class='container'>
+    <view class='list' wx:key wx:for="{{array}}" wx:for-item="item" bindtap='bindDetail' data-index="{{idx}}" wx:for-index="idx">
+        <image src='{{item.avatar}}' class='list-avatar'></image>
+        <view class='list-status'>
+            <text></text> 直播中
+        </view>
+        <view class='list-number'>{{item.people}} 人观看</view>
+        <view class='list-wrap'>
+            <view class='list-wrap-head'>
+                <text class='list-wrap-title'>{{item.title}}</text>
+                <text class='list-wrap-hot'>热销爆款</text>
+            </view>
+            <view class='list-wrap-name'>{{item.name}}</view>
+            <view class='list-wrap-pic'>
+                <view class='list-wrap-imgs'>
+                    <image src='../../temp/ex-img1.jpg'></image>
+                    <image src='../../temp/ex-img7.jpg'></image>
+                    <image src='../../temp/ex-img8.jpg'></image>
+                </view>
+                <view class='list-wrap-stream'>
+                    <text class='list-stream-piece'>{{item.num}}件</text>
+                    <text class='list-stream-purchase'>直播购</text>
+                </view>
+                <view class='clear'></view>
+            </view>
+        </view>
+    </view>
+</view>
