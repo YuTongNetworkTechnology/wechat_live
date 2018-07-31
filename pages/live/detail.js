@@ -7,6 +7,7 @@
 var strophe = require('../../utils/strophe.js')
 var WebIM = require('../../utils/WebIM.js')
 var WebIM = WebIM.default
+var app=getApp();
 Page({
     /**
      * 直播相关监听
@@ -283,7 +284,7 @@ Page({
     sendMessage: function () {
         if (!this.data.userMessage.trim()) return;
         var that = this
-        var myName = wx.getStorageSync('myUsername')
+        var myName = app.globalData.userInfo.nickName;
         var id = WebIM.conn.getUniqueId();
         var msg = new WebIM.message('txt', id);
         msg.set({

@@ -35,3 +35,12 @@
     color: #898989;
     font-size: 28rpx;
 }
+.avator{
+  width: 100rpx;
+  height: auto;
+  text-align: center;
+  position: absolute;
+  top:450rpx;
+  left: 50%;
+  margin-left: -50rpx;
+}

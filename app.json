@@ -1,8 +1,7 @@
 {
     "pages": [
-        "pages/public/login",
-        "pages/public/register",
         "pages/live/index",
+        "pages/public/register_wx",
         "pages/live/detail",
         "pages/personal/index"
     ],

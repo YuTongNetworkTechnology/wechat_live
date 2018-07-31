@@ -1,4 +1,4 @@
-require('./utils/strophe.js')
+var strophe =require('./utils/strophe.js')
 var WebIM = require('./utils/WebIM.js').default
 
 //app.js   
@@ -77,9 +77,10 @@ App({
                         title: 'server-side close the websocket connection',
                         duration: 1000
                     });
-                    wx.redirectTo({
-                        url: '../public/login'
-                    });
+                    // wx.redirectTo({
+                    //     url: '../public/login'
+                    // });
+                    that.onLaunch();
                     return;
                 }
 
@@ -89,31 +90,81 @@ App({
                         title: 'offline by multi login',
                         duration: 1000
                     })
-                    wx.redirectTo({
-                        url: '../public/login'
-                    })
+                    that.onLaunch();
                     return;
                 }
             },
         })
+      that.testLogin(function(status,info){
+         if(status==1){
+          //  var WebIMt = WebIM.default;
+           var options = {
+             apiUrl: WebIM.config.apiURL,
+             user: info,
+             pwd: '123123',
+             grant_type: 'password',
+             appKey: WebIM.config.appkey
+           }
+           wx.setStorage({
+             key: "myUsername",
+             data: info
+           })
+           //console.log('open')
+           WebIM.conn.open(options,function(gse){
+             if (gse==0){
+                console.log(gse)
+                wx.redirectTo({
+                  url: '../public/register_wx?openid='+info,
+                })
+             }else{
+               
+               that.getUserInfo(function(ggd){
+                 console.log(ggd);
+               })
+             }
+           });
+         }else{
+           wx.showModal({
+             title: info,
+             confirmText: 'OK',
+             showCancel: false
+           })
+         }
+      })
 
-
-    }
-    ,
+    },
+    testLogin:function(cb){
+        wx.login({
+          success: function (res) {
+            if (res.code) {
+              //发起网络请求
+              wx.request({
+                url: 'https://open.zjkytwl.com/hxlive/login',
+                data: {
+                  code: res.code
+                },
+                success:function(res){
+                    typeof cb == "function" && cb(res.data.status,res.data.info)
+                },
+                error:function(){
+                  typeof cb == "function" && cb(0, '网络错误！')
+                }
+              })
+            } else {
+              typeof cb == "function" && cb(0, res.errMsg)
+            }
+          }
+        })
+    },
     getUserInfo: function (cb) {
         var that = this
         if (this.globalData.userInfo) {
             typeof cb == "function" && cb(this.globalData.userInfo)
         } else {
-            //调用登录接口
-            wx.login({
-                success: function () {
-                    wx.getUserInfo({
-                        success: function (res) {
-                            that.globalData.userInfo = res.userInfo
-                            typeof cb == "function" && cb(that.globalData.userInfo)
-                        }
-                    })
+            wx.getUserInfo({
+                success: function (res) {
+                    that.globalData.userInfo = res.userInfo
+                    typeof cb == "function" && cb(that.globalData.userInfo)
                 }
             })
         }

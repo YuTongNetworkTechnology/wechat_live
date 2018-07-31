@@ -746,7 +746,7 @@ connection.prototype.cacheReceiptsMessage = function (options) {
     this.sendQueue.push(options);
 };
 
-connection.prototype.open = function (options) {
+connection.prototype.open = function (options,cb) {
 
 
     var pass = _validCheck(options, this);
@@ -784,22 +784,24 @@ connection.prototype.open = function (options) {
                     duration: 1000
                 });
                 
-                setTimeout(function () {
-                  wx.switchTab({
-                        url: '../live/index'
-                    })
-                }, 1000);
+                // setTimeout(function () {
+                //   wx.switchTab({
+                //         url: '../live/index'
+                //     })
+                // }, 1000);
+              typeof cb == "function" && cb(1)
             }
             _login(data.data, conn);
         };
         var error = function (res, xhr, msg) {
             console.log('error', res, xhr, msg)
             conn.clear();
-            wx.showModal({
-                title: '用户名或密码错误!',
-                showCancel: false,
-                confirmText: 'OK'
-            });
+            // wx.showModal({
+            //     title: '用户名或密码错误!',
+            //     showCancel: false,
+            //     confirmText: 'OK'
+            // });
+            typeof cb == "function" && cb(0)
             if (res.error && res.error_description) {
                 conn.onError({
                     type: _code.WEBIM_CONNCTION_OPEN_USERGRID_ERROR,
